@@ -2,6 +2,9 @@
 
   "use strict";
 
+    // COPYRIGHT YEAR
+    $('#copyright-year').text(new Date().getFullYear());
+
     // COLOR MODE
     $('.color-mode').click(function(){
         $('.color-mode-icon').toggleClass('active')

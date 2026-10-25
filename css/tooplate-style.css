@@ -7,14 +7,18 @@ https://www.tooplate.com/view/2115-marvel
 */
 
 
-@import url("https://fonts.googleapis.com/css?family=Maven+Pro:400,700");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 body {
-  font-family: "Maven Pro", sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   padding-top: 70px;
 }
 
 .full-screen {
   padding: 8rem 0;
+}
+
+#about.full-screen {
+  padding-bottom: 4rem;
 }
 
 .small-text {
@@ -49,7 +53,7 @@ a:hover {
 
 p {
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.5;
   color: #5b5b5b;
 }
@@ -573,36 +577,185 @@ b, strong {
 }
 
 
-.card-section {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 20px;
-  align-items: stretch
+.experience-layout {
+  align-items: center;
+  row-gap: 24px;
 }
 
-.card {
+.experience-label {
+  display: block;
+  margin-bottom: 16px;
+  color: #7c3aed;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.experience-intro h2 {
+  max-width: 380px;
+  margin-bottom: 20px;
+}
+
+.experience-intro p {
+  max-width: 380px;
+  margin-bottom: 0;
+  line-height: 1.8;
+}
+
+#resume .timeline-info {
+  display: block;
+  min-height: 75px;
+  padding-top: 6px;
+  margin-left: 96px;
+}
+
+#resume .timeline-info h3 {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  line-height: 1.4;
+  margin-bottom: 0;
+}
+
+#resume .timeline-info small {
+  margin-left: 0;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.client-assignments {
+  margin-top: 20px;
+  padding-left: 16px;
+  border-left: 2px solid #e4e4e7;
+}
+
+.client-assignments .client-assignments-label {
+  margin-bottom: 12px;
+  color: #6c757d;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.client-assignments ul {
+  padding: 0;
+}
+
+.client-assignments li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 16px;
+  margin-bottom: 10px;
+  color: #474559;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.client-assignments li:last-child {
+  margin-bottom: 0;
+}
+
+.client-period {
+  color: #6c757d;
+  font-size: 13px;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+}
+
+.dark-mode .client-assignments {
+  border-color: #3f3f46;
+}
+
+.dark-mode .client-assignments li {
+  color: #f4f4f5;
+}
+
+.dark-mode .client-assignments-label,
+.dark-mode .client-period {
+  color: #b4b4bd;
+}
+
+.dark-mode .experience-label {
+  color: #b197fc;
+}
+
+.dark-mode .experience-intro p,
+.dark-mode #resume .timeline-info small {
+  color: #b4b4bd;
+}
+
+@media (max-width: 575px) {
+  #resume .timeline-info h3 {
+    font-size: 20px;
+  }
+}
+
+.hero-portrait {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.14);
+}
+
+.card-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+  padding-top: 32px;
+  padding-bottom: 20px;
+  align-items: stretch;
+}
+
+.card-section .card {
   background: #fff;
-  border-radius: 10px;
+  border: 1px solid #e4e4e7;
+  border-radius: 16px;
   overflow: hidden;
-  width: 300px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  min-width: 0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
   display: flex;
   flex-direction: column;
 }
 
-.card img {
+.card-section .card img {
+  display: block;
   width: 100%;
-  height: 180px;
+  height: auto;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
+  border-bottom: 1px solid #e4e4e7;
+}
+
+@media (min-width: 768px) {
+  .card-section {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 992px) {
+  .card-section {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .card-content {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  padding: 20px;
+  padding: 24px;
 }
 
 .tag {
@@ -614,16 +767,18 @@ b, strong {
 }
 
 .card-content h3 {
-  font-size: 18px;
-  margin: 10px 0;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: -0.4px;
+  margin: 12px 0;
   color: #000;
 }
 
 .card-content p {
   font-size: 14px;
   color: #444;
-  line-height: 1.5;
-  margin-bottom: 20px;
+  line-height: 1.7;
+  margin-bottom: 24px;
 }
 
 .btncard {
@@ -641,6 +796,40 @@ b, strong {
 
 .btncard:hover {
   border-color: #7C3AED;
+}
+
+.dark-mode .card-section .card {
+  background: #18181b;
+  border-color: #303036;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .card-section .card img {
+  border-color: #303036;
+}
+
+.dark-mode .card-content h3 {
+  color: #f4f4f5;
+}
+
+.dark-mode .card-content p {
+  color: #d4d4d8;
+}
+
+.dark-mode .card-content .tag {
+  color: #a1a1aa;
+}
+
+.dark-mode .card-content .btncard {
+  color: #fff;
+  border-color: #71717a;
+}
+
+.dark-mode .card-content .btncard:hover,
+.dark-mode .card-content .btncard:focus-visible {
+  color: #fff;
+  background: #7c3aed;
+  border-color: #7c3aed;
 }
 
 /* CTA Section */
