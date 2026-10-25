@@ -827,7 +827,7 @@ b, strong {
 
 .dark-mode .card-content .btncard:hover,
 .dark-mode .card-content .btncard:focus-visible {
-  color: #fff;
+  color: #fff !important;
   background: #7c3aed;
   border-color: #7c3aed;
 }
